@@ -1,4 +1,7 @@
-import MarsList from "../MarsList/MarsList";
+// import MarsList from "../MarsList/MarsList";
+
+import { useState, useEffect } from "react"
+import RoversList from "../RoversList/RoversList"
 
 const App = () => {
     const DEMO_KEY = 'uFj4Cg3acbb9U3BVt3BpDIynZHq32hfKtf12CSjz'
@@ -17,7 +20,7 @@ const App = () => {
     }, [])
     
     return <div className="container">
-        <MarsList/>
+        <RoversList data={rovers}/>
     </div>
 }
 
