@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import RoversList from "../RoversList/RoversList"
+import MarsList from "../MarsList/MarsList"
 
 const App = () => {
     const DEMO_KEY = 'uFj4Cg3acbb9U3BVt3BpDIynZHq32hfKtf12CSjz'
@@ -19,9 +20,16 @@ const App = () => {
       .then((data) => setRovers(data.rovers))
     }, [])
     
-    return <div className="container">
-        <RoversList data={rovers}/>
-    </div>
+    return (
+      <>
+        <div className="container">
+          <RoversList data={rovers} />
+        </div>
+        <div className="container">
+            <MarsList/>
+        </div>
+      </>
+    ); 
 }
 
 export default App;

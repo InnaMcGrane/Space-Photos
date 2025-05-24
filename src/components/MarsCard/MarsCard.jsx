@@ -1,20 +1,20 @@
 import cn from "classnames";
 import styles from "./marsCard.module.scss";
 
-const MarsCard = () => {
+const MarsCard = ({img}) => {
   return (
     <div className={cn(styles["mars-card"])}>
       <div className={cn(styles["mars-card__img-wrapper"])}>
-        <img className={cn(styles["mars-card__img"])}src="" />
+        <img className={cn(styles["mars-card__img"])} src={img} />
       </div>
-      <div className={cn(styles["mars-card__content"])}>
+      {/* <div className={cn(styles["mars-card__content"])}>
         <h4>rover info:</h4>
         <ul>
           <li>id: 5</li>
           <li>name: Curiosity</li>
           <li>status: active</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
