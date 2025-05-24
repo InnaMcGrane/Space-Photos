@@ -1,9 +1,9 @@
 import cn from "classnames";
 import styles from "./rover.module.scss";
 
-const Rover = ({ id, name, total_photos, cameras, img }) => {
+const Rover = ({ id, name, total_photos, cameras, img, setCurrentRover }) => {
   return (
-    <div className={cn(styles["rover"])}>
+    <div className={cn(styles["rover"])} onClick={() => setCurrentRover(name.toLowerCase())}>
       <div className={cn(styles["rover__img-wrapper"])}>
         <img className={cn(styles["rover__img"])} src={img} alt="" />
       </div>
@@ -14,7 +14,11 @@ const Rover = ({ id, name, total_photos, cameras, img }) => {
         <h4 className={cn(styles["rover__photos"])}>total photos: {total_photos}</h4>
         <div className={cn(styles["rover__cameras"])}>
           {cameras.map((camera) => {
-            return <span className={cn(styles["rover__camera"])} key={camera.name}>{camera.name}</span>;
+            return (
+              <span className={cn(styles["rover__camera"])} key={camera.name}>
+                {camera.name}
+              </span>
+            );
           })}
         </div>
       </div>
