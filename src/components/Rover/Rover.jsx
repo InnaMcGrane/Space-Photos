@@ -14,7 +14,7 @@ const Rover = ({ id, name, total_photos, cameras, img }) => {
         <h4 className={cn(styles["rover__photos"])}>total photos: {total_photos}</h4>
         <div className={cn(styles["rover__cameras"])}>
           {cameras.map((camera) => {
-            return <span className={cn(styles["rover__camera"])}>{camera.name}</span>;
+            return <span className={cn(styles["rover__camera"])} key={camera.name}>{camera.name}</span>;
           })}
         </div>
       </div>
